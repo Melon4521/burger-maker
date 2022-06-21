@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Maker</title>
+
+    <script src="https://kit.fontawesome.com/0659859d2a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <div class="header">
+            <section class="container">
+                <h1>Конструктор бургера</h1>
+            </section>
+        </div>
+
+        <main class="main">
+            <section class="container">
+
+                <h2 class="title">Создай свой бургер!</h2>
+
+                <section class="burger-maker">
+
+                    <div class="maker-plate">
+                        <div class="maker-plate__image">
+                            <img src="images/bottom_burger_bun.png" alt="" class="plate-image">
+                        </div>
+                        <div class="maker-plate__content">
+                            <div class="maker-plate__details">
+                                <div data-open=".modal-info" class="details-title open-modal"><i class="fa-solid fa-clipboard-list"></i> Итог</div>
+                            </div>
+                            <div class="maker-plate__sum">
+                                <h3 class="sum__title">0 руб.</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="maker-accordion">
+                        <input tabindex="1" type="text" placeholder="Название бургера..." class="burger-name">
+                        <div class="accordion">
+                            <div class="accordion__button _acco-active">Ингридиенты</div>
+                            <div class="accordion__body _acco-active">
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Булка</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Булка" class="accordion_buttons-price index-max">34 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Булка с кунжутом</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Булка с кунжутом" class="accordion_buttons-price index-max">40 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Лист салата</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Лист салата" class="accordion_buttons-price">20 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Говяжья котлета</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Говяжья котлета" class="accordion_buttons-price">70 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Куриная котлета</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Куриная котлета" class="accordion_buttons-price">75 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Рыбная котлета</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Рыбная котлета" class="accordion_buttons-price">79 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Огурчики</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Огурчики" class="accordion_buttons-price">8 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Маринованные огурчики</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Маринованные огурчики" class="accordion_buttons-price">12 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Томат</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Томат" class="accordion_buttons-price">10 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Плавленный сыр</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Плавленный сыр" class="accordion_buttons-price">18 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Лук</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Лук" class="accordion_buttons-price">15 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Бекон</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Бекон" class="accordion_buttons-price">22 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <div class="accordion__button _acco-active">Соусы</div>
+                            <div class="accordion__body">
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Кетчуп томатный</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Кетчуп" class="accordion_buttons-price">30 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Сырный соус</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Сырный соус" class="accordion_buttons-price">30 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Кисло-сладкий соус</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Кисло-сладкий соус" class="accordion_buttons-price">30 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Соус барбекью</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Соус барбекью" class="accordion_buttons-price">30 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Чесночный соус</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Чесночный соус" class="accordion_buttons-price">30 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <div class="accordion-item__title">Соус терияки</div>
+                                    <div class="accordion-item__buttons">
+                                        <div data-itemname="Соус терияки" class="accordion_buttons-price">30 руб.</div>
+                                        <div class="add-remove__inner">
+                                            <div class="accordion__buttons-elem add-item"><i class="fa-solid fa-plus"></i></div>
+                                            <div class="accordion__buttons-elem remove-item"><i class="fa-solid fa-minus"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" tabindex="2" class="create-burger">Создать</button>
+                    </div>
+
+                </section>
+            </section>
+
+            <!-- Modal window -->
+
+            <section class="container">
+                <div class="modal-inner">
+                    <div class="modal-info modal-window">
+                        <div class="modal-info__body">
+                            <div class="modal-info__title">Информация:</div>
+                            <div class="modal-info__text">
+                                <div class="info__text">Всего добавки</div>
+                                <div class="info__text total-extras">0</div>
+                            </div>
+                        </div>
+                        <div data-close=".modal-info" class="modal__close">X</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <section class="container">
+                <h2>Footer</h2>
+            </section>
+        </footer>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
