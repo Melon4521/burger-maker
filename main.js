@@ -65,10 +65,6 @@ function createBurger() {
     };
 };
 
-// ======================
-
-// Price for burger
-
 let total_price = document.querySelector('.sum__title'),
     total_items = 0,
     image_inner = document.querySelector('.maker-plate__image'),
@@ -98,7 +94,7 @@ let total_price = document.querySelector('.sum__title'),
                         break;
                     };
                 };
-                console.log(item_name, item_data_attr, iter)
+
                 if (iter == 1) {
                     if (Number(info_total.innerHTML) < 0) {
                         info_total.innerHTML = '0';
@@ -117,6 +113,7 @@ let total_price = document.querySelector('.sum__title'),
                     new_modal_info_total.classList.add('info-total');
                     // Image
                     new_image = document.createElement('img');
+                    new_image.classList.add('plate-image-extra');
                     new_image.classList.add('plate-image');
                     new_image.id = item_data_attr;
                     new_image.src = `images/${item_data_attr}.png`;
@@ -150,6 +147,7 @@ let total_price = document.querySelector('.sum__title'),
                 // Image
                 let new_image = document.createElement('img');
                 new_image.classList.add('plate-image');
+                new_image.classList.add('plate-image-extra');
                 new_image.id = item_data_attr;
                 new_image.src = `images/${item_data_attr}.png`;
                 if (item_name.classList.contains('index-max')) {
@@ -227,6 +225,25 @@ let total_price = document.querySelector('.sum__title'),
             };
         });
     });
+
+// Убрать все
+let delete_btn = document.querySelector('.del-all');
+delete_btn.addEventListener('click', () => {
+    let modal_info__text_ex = document.querySelectorAll('.modal-info__text-ex');
+    let plate_image_extras = document.querySelectorAll('.plate-image-extra');
+    if (modal_info__text_ex.length > 0 && plate_image_extras.length > 0) {
+        total_price.innerHTML = '0 руб.';
+        modal_info__text_ex.forEach(item => {
+            document.querySelector('.modal-info__body').removeChild(item);
+            total_items = 0;
+            document.querySelector('.total-extras').innerHTML = total_items;
+        });
+
+        plate_image_extras.forEach(item => {
+            document.querySelector('.maker-plate__image').removeChild(item)
+        });
+    };
+});
 
 // ======================
 
